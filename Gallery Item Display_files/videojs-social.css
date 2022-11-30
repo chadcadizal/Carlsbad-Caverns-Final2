@@ -1,0 +1,468 @@
+/* videojs-social - v3.6.0
+ * Copyright (c) 2017 Brightcove 
+ * Modifications by Trevor Cole - National Park Service */
+
+.vjs-share-control {
+	-webkit-box-ordinal-group: 5;
+	-moz-box-ordinal-group: 5;
+	-webkit-order: 5;
+	-ms-flex-order: 5;
+	-ms-order: 5;
+	order: 5;
+}
+
+
+.video-js .vjs-share-control.vjs-share-control:before {
+	font-family: 'FontAwesome';
+	content: "\f064";
+	color: #FFFFFF;
+	font-size: 1em;
+	line-height: 1.2em;
+	text-align: center;
+	padding: .2em;
+}
+
+.vjs-button.vjs-share-control {
+	cursor: pointer;
+	font-weight: normal;
+	font-size: .8em;
+}
+
+.video-js .vjs-share-control.vjs-share-control:hover:before {
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.vjs-social-overlay {
+	position: absolute;
+	color: #FFFFFF;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	right: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 4em 4em;
+	text-align: left;
+	letter-spacing: 1px;
+}
+
+.vjs-social-overlay .vjs-hidden {
+	display: none;
+}
+
+.ie8 .vjs-social-overlay {
+	background: #000000;
+}
+
+.vjs-social-overlay legend {
+	border: none;
+	color: #FFFFFF;
+	margin-bottom: 1em;
+	font-size: 1.3em;
+	font-weight: 500;
+	line-height: 1em;
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.vjs-social-overlay label {
+	font-weight: 500;
+	font-size: 1.3em;
+	display: block;
+	margin-bottom: 1.3em;
+}
+
+.vjs-social-overlay .vjs-share-options {
+	font-size: 1.3em;
+	list-style: none;
+	color: #FFFFFF;
+	text-align: center;
+	overflow: auto;
+	padding: 0px;
+}
+
+.vjs-share-options {
+	margin-top: 1em;
+}
+
+.vjs-social-overlay li {
+	float: left;
+	width: 2em;
+	height: 2em;
+	overflow: hidden;
+	vertical-align: middle;
+	line-height: 2em;
+	margin-left: .5em;
+	font-size: 1em;
+}
+
+.vjs-social-overlay .vjs-invalid {
+	border: 3px solid #FF0000;
+}
+
+.vjs-social-overlay li:first-child {
+	margin-left: 0;
+}
+
+ul.vjs-share-options li a,
+ul.vjs-share-options li a:visited,
+ul.vjs-share-options li a:visited:focus,
+ul.vjs-share-options li a:visited:hover {
+	text-decoration: none;
+	cursor: pointer;
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay a {
+	display: block;
+	color: #FFFFFF;
+}
+
+[class*="vjs-icon-"] {
+    display: block;
+	font-family: "FontAwesome";
+	font-size: 2em;
+	border-radius: .3em;
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-facebook {
+	background-color: #3B5998;
+}
+
+.vjs-social-overlay .vjs-icon-facebook:before {
+	content: '\f09a';
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-gplus {
+	background-color: #D53326;
+}
+
+.vjs-social-overlay .vjs-icon-gplus:before {
+	content: '\f0d5';
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-twitter {
+	background-color: #55ACEE;
+}
+
+.vjs-social-overlay .vjs-icon-twitter:before {
+	content: '\f099';
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-tumblr {
+	background-color: #29364B;
+}
+
+.vjs-social-overlay .vjs-icon-tumblr:before {
+	content: '\f173';
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-pinterest {
+	background-color: #C10218;
+}
+
+.vjs-social-overlay .vjs-icon-pinterest:before {
+	content: '\f0d2';
+	color: #FFFFFF;
+}
+
+.vjs-social-overlay .vjs-icon-linkedin {
+	background-color: #006699;
+}
+
+.vjs-social-overlay .vjs-icon-linkedin:before {
+	content: '\f0e1';
+	color: #FFFFFF;
+}
+
+.vjs-icon-facebook:hover:before,
+.vjs-icon-facebook:focus:before,
+.vjs-icon-gplus:hover:before,
+.vjs-icon-gplus:focus:before,
+.vjs-icon-twitter:hover:before,
+.vjs-icon-twitter:focus:before,
+.vjs-icon-tumblr:hover:before,
+.vjs-icon-tumblr:focus:before,
+.vjs-icon-pinterest:hover:before,
+.vjs-icon-pinterest:focus:before,
+.vjs-icon-linkedin:hover:before,
+.vjs-icon-linkedin:focus:before {
+	color: #FFFFFF;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.vjs-icon-facebook:hover,
+.vjs-icon-facebook:focus,
+.vjs-icon-gplus:hover,
+.vjs-icon-gplus:focus,
+.vjs-icon-twitter:hover,
+.vjs-icon-twitter:focus,
+.vjs-icon-tumblr:hover,
+.vjs-icon-tumblr:focus,
+.vjs-icon-pinterest:hover,
+.vjs-icon-pinterest:focus,
+.vjs-icon-linkedin:hover,
+.vjs-icon-linkedin:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.vjs-icon-facebook,
+.vjs-icon-gplus,
+.vjs-icon-twitter,
+.vjs-icon-tumblr,
+.vjs-icon-pinterest,
+.vjs-icon-linkedin {
+	border: 1px solid transparent;
+}
+
+.vjs-social-overlay input {
+	width: 100%;
+	display: block;
+	margin-top: .3em;
+	border-radius: .2em;
+	padding: 0 9px;
+	line-height: 1em;
+	height: 2.5em;
+	border: none;
+	color: #515151;
+	font-weight: 600;
+	font-size: .8em;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.vjs-social-link-options {
+	height:auto;
+	overflow: hidden;
+}
+
+.vjs-social-link {
+	float:none;
+	width: auto;
+	overflow: hidden;
+}
+
+.vjs-social-start {
+	margin-left: 20px;
+	width: 85px;
+	float: right;
+}
+
+.video-js .vjs-restart {
+	color: #FFFFFF;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	display: inherit;
+	margin: 0 auto;
+	height: 58px;
+	width: 62px;
+	text-align: center;
+}
+
+.video-js .vjs-restart.vjs-hidden {
+	display: none;
+}
+
+.video-js .vjs-restart:before {
+	font-family: "FontAwesome";
+	font-size: 45px;
+	padding: 10px;
+	height: 58px;
+}
+
+.video-js .vjs-restart:before {
+	content: '\f021';
+}
+
+/* --- New Styles For v3.6.0 --- */
+
+.vjs-social-overlay {
+	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	  font-size: 10px;
+	  letter-spacing: 1px;
+}
+
+.vjs-social-overlay a {
+	  color: #fff;
+}
+
+.vjs-social-overlay .vjs-social-title,
+.vjs-social-overlay .vjs-social-description {
+	  margin: 0;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+}
+
+.vjs-social-overlay .vjs-social-title {
+	  font-size: 1.5em;
+	  font-weight: bold;
+	  line-height: 1.3em;
+	  margin-bottom: .3em;
+}
+
+.vjs-social-overlay .vjs-social-description {
+	  font-size: 1em;
+	  font-weight: normal;
+	  line-height: 1.5;
+	  margin-bottom: 1em;
+}
+
+.vjs-social-overlay .vjs-social-share-links {
+	  margin: 0 0 1em;
+	  overflow: auto;
+}
+
+.vjs-social-overlay .vjs-social-share-link {
+	  width: 2em;
+	  text-align: center;
+	  border-radius: .3em;
+	  float: left;
+	  font-size: 2em;
+	  line-height: 1em;
+	  margin-right: .5em;
+	  outline: none;
+	  padding: .5em;
+	  text-decoration: none;
+}
+
+.vjs-social-overlay .vjs-social-direct-link,
+.vjs-social-overlay .vjs-social-start-from,
+.vjs-social-overlay .vjs-social-embed-code {
+	  float: left;
+	  margin-bottom: 1em;
+}
+
+.vjs-social-overlay .vjs-social-direct-link .vjs-social-label-text,
+.vjs-social-overlay .vjs-social-start-from .vjs-social-label-text,
+.vjs-social-overlay .vjs-social-embed-code .vjs-social-label-text {
+	  display: block;
+	  margin-bottom: .2em;
+}
+
+.vjs-social-overlay .vjs-social-direct-link input,
+.vjs-social-overlay .vjs-social-start-from input,
+.vjs-social-overlay .vjs-social-embed-code input {
+	  border: 0;
+	  color: #333;
+	  display: block;
+	  font-size: 1em;
+	  padding: .5em .7em;
+	  width: 100%;
+}
+
+.vjs-social-overlay .vjs-social-direct-link input.vjs-invalid,
+.vjs-social-overlay .vjs-social-start-from input.vjs-invalid,
+.vjs-social-overlay .vjs-social-embed-code input.vjs-invalid {
+	  background-color: red;
+	  color: #fff;
+}
+
+.vjs-social-overlay .vjs-social-direct-link {
+	  width: 100%;
+}
+
+.vjs-social-overlay .vjs-social-start-from {
+	  width: 20%;
+}
+
+.vjs-social-overlay .vjs-social-embed-code {
+	  width: 100%;
+}
+
+.vjs-social-overlay.vjs-social-as-endscreen .vjs-restart {
+	  border: 0;
+	  cursor: pointer;
+	  display: block;
+	  font-size: 4em;
+	  margin: 0 auto;
+	  outline: 0;
+	  padding: 0;
+}
+
+.vjs-social-overlay.vjs-social-as-endscreen .vjs-restart:hover:before,
+.vjs-social-overlay.vjs-social-as-endscreen .vjs-restart:focus:before {
+	  text-shadow: 1px -1px 20px #fff, -1px 1px 20px #fff;
+}
+
+.vjs-social-overlay.vjs-social-as-endscreen.vjs-social-short-player .vjs-social-description {
+	  display: none;
+}
+
+.vjs-button.vjs-share-control:hover {
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.vjs-dock-shelf .vjs-button.vjs-share-control {
+	  position: relative;
+}
+
+.vjs-dock-shelf .vjs-button.vjs-share-control span {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  vertical-align: top;
+	  text-decoration: underline;
+	  margin-left: 2px;
+}
+
+/*
+.vjs-button.vjs-share-control:before {
+	  font-family: VideoJS;
+	  font-weight: normal;
+	  font-style: normal;
+	  content: "\f10f"
+}
+
+.vjs-v6 .vjs-button.vjs-share-control:before {
+	  content: none
+}
+
+.vjs-v6 .vjs-button.vjs-share-control .vjs-icon-placeholder:before {
+	  font-family: VideoJS;
+	  font-weight: normal;
+	  font-style: normal;
+	  content: "\f10f"
+}
+
+.vjs-v6 .vjs-dock-shelf .vjs-button.vjs-share-control:before {
+	  content: "\f10f"
+}
+
+.vjs-v6 .vjs-dock-shelf .vjs-button.vjs-share-control .vjs-icon-placeholder:before {
+	  content: none
+}
+*/
+.vjs-social-overlay.vjs-social-small .vjs-social-direct-link {
+	  width: 100%;
+	  padding-right: 0;
+}
+
+.vjs-social-overlay.vjs-social-small .vjs-social-share-links {
+	  margin-bottom: .3em;
+}
+
+.vjs-social-overlay.vjs-social-small .vjs-social-share-link {
+	  margin-bottom: .7em;
+}
+
+.video-js .vjs-control.vjs-close-button:before,
+.video-js .vjs-control.vjs-icon-cancel:before {
+	content: "\f115";
+    font-size: 3em;
+    left: -10px;
+}
+
+.video-js .vjs-control.vjs-close-button:hover:before,
+.video-js .vjs-control.vjs-icon-cancel:hover:before,
+.video-js .vjs-control.vjs-close-button:focus:before,
+.video-js .vjs-control.vjs-icon-cancel:focus:before {
+	background-color: inherit;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 10px rgba(255, 255, 255, 1);
+}
